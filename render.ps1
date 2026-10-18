@@ -1,14 +1,17 @@
 param(
-    [string]$Version = "v2", # v1 또는 v2 선택
+    [string]$Version = "v3", # v1, v2 또는 v3 선택 (기본: v3 Masterpiece)
     [string]$Quality = "ql"  # ql (480p15), qm (720p30), qh (1080p60)
 )
 
 if ($Version -eq "v1") {
     $file = "wind_calculus.py"
     $scene = "WindCalculus3DLecture"
-} else {
+} elseif ($Version -eq "v2") {
     $file = "wind_calculus_v2.py"
     $scene = "WindCalculus3DLectureV2"
+} else {
+    $file = "wind_calculus_v3.py"
+    $scene = "WindCalculus3DLectureV3"
 }
 
 Write-Host "==========================================" -ForegroundColor Cyan
