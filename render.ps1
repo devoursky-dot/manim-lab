@@ -1,5 +1,5 @@
 param(
-    [string]$Version = "v4", # v1, v2, v3, v4 선택 (기본: v4 변화량 vs 변화율 혁신 버전)
+    [string]$Version = "v5", # v1, v2, v3, v4, v5 선택 (기본: v5 조화진동 및 인식론 혁신 버전)
     [string]$Quality = "ql"  # ql (480p15), qm (720p30), qh (1080p60)
 )
 
@@ -12,9 +12,12 @@ if ($Version -eq "v1") {
 } elseif ($Version -eq "v3") {
     $file = "wind_calculus_v3.py"
     $scene = "WindCalculus3DLectureV3"
-} else {
+} elseif ($Version -eq "v4") {
     $file = "wind_calculus_v4.py"
     $scene = "WindCalculus3DLectureV4"
+} else {
+    $file = "wind_calculus_v5.py"
+    $scene = "WindCalculus3DLectureV5"
 }
 
 Write-Host "==========================================" -ForegroundColor Cyan
