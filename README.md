@@ -9,27 +9,25 @@
 
 ---
 
-## 📽️ Featured Lecture: 3D 바람 벡터장과 미적분의 직관적 이해 (v3 Masterpiece)
+## 📽️ Featured Lecture: 바람과 미적분 (v4: 변화량이 아닌 변화율을 보다)
 
-> **"미분은 세상을 인식하는 방법이고, 적분은 그 순간들을 누적하는 흐름이다."**
+> **"우리가 느끼는 것은 변화량이 아니라, 시간에 따른 '변화율'이다!"**
 
-눈에 보이지 않는 3차원 바람의 흐름을 통해 미분(순간변화율, 국소 선형화), 회전(Curl, 소용돌이 패들휠), 적분(미소 변위의 누적, 연속 유선)의 직관적 본질을 탐구합니다.  
-한국어 AI 신경망 성우(`ko-KR-InJoonNeural`)의 해설 싱크에 맞추어 카메라 앵글과 3D 애니메이션이 정밀하게 동기화됩니다.
+눈에 보이지 않는 3차원 바람의 흐름을 통해 미분(순간변화율, 국소 선형화)과 적분(변화량의 누적, 유선)의 직관적 본질을 탐구합니다.  
+찰나를 본 나뭇잎($0.2\text{m}$ 이동)과 오래 본 나뭇잎($1.0\text{m}$ 이동)의 이동거리가 5배나 다른데도 왜 같은 바람으로 인지하는지, 시간 나눗셈을 통해 동일한 속도 벡터 $\vec{v}$로 일치하는 과정을 직관적으로 증명합니다.
 
-![3D 바람 벡터장과 미적분 v3 프리뷰](assets/wind_calculus_v3_preview.gif)
+![3D 바람 벡터장과 미적분 v4 프리뷰](assets/wind_calculus_v4_preview.gif)
 
-### 📌 v3 핵심 시각화 및 교육적 특징
+### 📌 v4 핵심 교육 혁신
 
-1. **순수 딥 블랙 캔버스 (`#000000`)**:
-   - 모니터 경계를 허물고 무한한 명암비로 발광하는 수학 객체와 수식에 최고의 집중도 제공
-2. **소용돌이를 감지하는 회전 패들휠 (Paddlewheel for Curl)**:
-   - 바람의 유속 차이가 만드는 토크로 인해 실시간 회전하는 패들휠을 통해 공간의 회전($\text{Curl}(\vec{v}) = \nabla \times \vec{v}$)을 직관화
-3. **국소 선형화 (Local Linearization)**:
-   - 복잡하게 굽이치는 나뭇잎 궤적을 찰나의 순간($\Delta t \to 0$)으로 줌인하여 직선 접선 벡터 $\vec{v}(t) = \frac{d\vec{r}}{dt}$로 수렴함을 시각화
-4. **리만 합에서 연속 유선으로의 3단계 승화**:
-   - 거친 꺾은선($\Delta t = 0.60\text{s}$) $\longrightarrow$ 촘촘한 꺾은선($\Delta t = 0.22\text{s}$) $\longrightarrow$ 매끄러운 유선($dt \to 0$)
-5. **충분한 인지적 여백 (Cognitive Soak-in Time)**:
-   - 서두르지 않고 핵심 수식과 전환마다 2.0 ~ 3.0초의 침묵과 음미 시간을 배정 (총 101초 러닝타임, 26개 시퀀스)
+1. **변화량(Amount) vs 변화율(Rate)의 감각적 분리**:
+   - 나뭇잎이 얼마나 멀리 갔는가(변화량)가 아니라, 얼마나 빠르게 변하는가(변화율)를 감각하는 인간의 인지 원리를 규명
+2. **시간 나눗셈을 통한 속도 벡터 일치 연출 (Aha! Moment)**:
+   - 길이가 5배 다르던 두 주황색 변화량 화살표가 각자의 시간($\Delta t$)으로 나누어지는 순간, 정확히 동일한 크기의 황금빛 순간속도 벡터($\vec{v} = 2\text{m/s}$)로 일치
+3. **순수 딥 블랙 캔버스 (`#000000`) & 인지적 여백 (Soak-in Time)**:
+   - 핵심 깨달음 구간마다 2.0 ~ 2.5초의 시각적 음미 시간을 두어 시청자의 완전한 인지 흡수 유도 (약 2분 풀버전)
+4. **리만 합에서 연속 유선으로의 자연스러운 승화**:
+   - 순간변화율들을 모아 전체 흐름을 완성하는 적분($\int \vec{v}\,dt$)으로 완벽한 스토리라인 종결
 
 ---
 
@@ -44,13 +42,14 @@ pip install -r requirements.txt
 
 ### 2. 원클릭 렌더링 실행
 ```bash
-# v3 마스터피스 렌더링 (기본 480p15 빠른 모드)
+# v4 최신 버전 렌더링 (기본 480p15 빠른 모드)
 ./render.ps1
 
-# v3 고화질 렌더링 (1080p60)
+# v4 고화질 렌더링 (1080p60)
 ./render.ps1 -Quality qh
 
-# 이전 버전 실행 (v1, v2)
+# 이전 버전 실행 (v1, v2, v3)
+./render.ps1 -Version v3 -Quality qh
 ./render.ps1 -Version v2 -Quality qh
 ./render.ps1 -Version v1 -Quality qh
 ```
@@ -62,11 +61,11 @@ pip install -r requirements.txt
 ```text
 manim-lab/
 ├── assets/                          # README 및 쇼케이스용 GIF / PNG
-│   ├── wind_calculus_v3_preview.gif # 🌟 v3 마스터피스 프리뷰
-│   ├── WindCalculus3DLectureV3_final.png
+│   ├── wind_calculus_v4_preview.gif # 🌟 v4 변화량 vs 변화율 혁신 프리뷰
+│   ├── WindCalculus3DLectureV4_final.png
+│   ├── wind_calculus_v3_preview.gif # v3 프리뷰
 │   ├── wind_calculus_v2_preview.gif # v2 프리뷰
-│   ├── wind_calculus_preview.gif    # v1 프리뷰
-│   └── fluid_3b1b_preview.gif       # 3b1b 유체역학 프로토타입 프리뷰
+│   └── wind_calculus_preview.gif    # v1 프리뷰
 ├── core/                            # 공통 유틸리티 (Edge TTS 통합 모듈)
 │   ├── __init__.py
 │   └── edge_service.py
@@ -74,13 +73,13 @@ manim-lab/
 │   ├── manim_lecture_design_system_manual.md # 강의 시각화 표준 & 피드백 로그
 │   └── 3b1b_fluid_visualization_manual.md   # 3b1b 유체역학 시각화 매뉴얼
 ├── subtitles/                       # 동기화된 SRT 자막 파일
-│   ├── WindCalculus3DLectureV3.srt  # 🌟 v3 자막
-│   ├── WindCalculus3DLectureV2.srt  # v2 자막
+│   ├── WindCalculus3DLectureV4.srt  # 🌟 v4 자막
+│   ├── WindCalculus3DLectureV3.srt  # v3 자막
 │   └── WindCalculus3DLecture.srt    # v1 자막
-├── wind_calculus_v3.py              # 🌟 [v3] 마스터피스 소스 코드 (블랙 캔버스, 패들휠, 인지적 여백)
-├── wind_calculus_v2.py              # [v2] 줌인 & 단계적 수렴 소스 코드 (보존)
-├── wind_calculus.py                 # [v1] 초기 원본 소스 코드 (보존)
-├── fluid_mechanics_sample.py        # 3b1b 유체역학 프로토타입 코드
+├── wind_calculus_v4.py              # 🌟 [v4] 변화량 vs 변화율 핵심 직관화 완성본
+├── wind_calculus_v3.py              # [v3] 블랙 캔버스 & 3D 유체 마스터피스 (보존)
+├── wind_calculus_v2.py              # [v2] 줌인 & 단계적 수렴 소스 (보존)
+├── wind_calculus.py                 # [v1] 초기 원본 소스 (보존)
 ├── render.ps1                       # 버전별 간편 렌더링 스크립트
 ├── requirements.txt                 # 필수 의존성 목록
 └── README.md                        # 프로젝트 안내 문서
